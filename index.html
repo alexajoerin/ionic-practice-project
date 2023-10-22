@@ -16,15 +16,52 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"
     />
+    <script src="app.js" defer></script>
   </head>
   <body>
-    <ion-item>
-      <ion-label position="floating">Your Height</ion-label>
-      <ion-input></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">Your Weight</ion-label>
-      <ion-input></ion-input>
-    </ion-item>
+    <ion-app>
+      <ion-header>
+        <ion-toolbar color="primary">
+          <ion-title> BMI Calculator </ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <ion-item>
+          <!-- <ion-label position="floating">Your Height</ion-label> -->
+          <ion-input
+            id="height-input"
+            label="Your Height"
+            label-placement="floating"
+          ></ion-input>
+        </ion-item>
+        <ion-item>
+          <!-- <ion-label position="floating">Your Weight</ion-label> -->
+          <ion-input
+            id="weight-input"
+            label="Your Weight"
+            label-placement="floating"
+          ></ion-input>
+        </ion-item>
+        <ion-grid class="ion-text-center ion-margin">
+          <ion-row>
+            <ion-col>
+              <ion-button id="calc-button">
+                <ion-icon slot="start" name="calculator-outline"></ion-icon>
+                Calculate
+              </ion-button>
+            </ion-col>
+            <ion-col>
+              <ion-button fill="outline" id="reset-button">
+                <ion-icon slot="start" name="refresh-outline"></ion-icon>
+                Reset
+              </ion-button>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col id="result"> </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-content>
+    </ion-app>
   </body>
 </html>
